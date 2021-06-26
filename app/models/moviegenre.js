@@ -1,5 +1,7 @@
-"use strict";
-const { Model } = require("sequelize");
+'use strict';
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class MovieGenre extends Model {
     /**
@@ -8,31 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // this.hasHook(models.Genre);
+      // define association here
     }
-  }
-  MovieGenre.init(
-    {
-      MovieId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Movie",
-          key: 'id'
-        }
-      },
-      GenreId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Genre",
-          key: 'id'
-        }
-      }
-    },
-    {
-      sequelize,
-      paranoid: true,
-      modelName: "MovieGenre",
-    }
-  );
+  };
+  MovieGenre.init({
+    movieId: DataTypes.INTEGER,
+    genreId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'MovieGenre',
+  });
   return MovieGenre;
 };

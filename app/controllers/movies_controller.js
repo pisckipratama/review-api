@@ -45,21 +45,52 @@ class MoviesController {
     try {
       const data = await models.Movie.findAll({
         where: query,
-        raw: true,
-        include: {
+        include: [{
           model: models.Genre,
           as: 'genres',
-          attributes: []
-        }
+          required: false,
+          through: {
+            model: models.MovieGenre,
+            as: 'movieGenres',
+            attributes: [],
+          }
+        }]
       });
-      res.status(200).json({
-        status: 200,
-        success: true,
-        content: data,
+      
+      const response = data.map(item => {
+        const genres = item.genres.map(el => {
+          console.log(el.ID);
+          const result = {
+            name: el.name,
+            ID: el.id,
+            CreatedAt: moment(el.createdAt).utc().utcOffset("+07:00").format(),
+            UpdatedAt: moment(el.updatedAt).utc().utcOffset("+07:00").format(),
+            DeletedAt: el.deletedAt === null ? null : moment(el.deletedAt).utc().utcOffset("+07:00").format(),
+          };
+          return result;
+        });
+
+        const result = {
+          title: item.title,
+          year: item.year,
+          ratings: item.ratings,
+          genres,
+          ID: item.id,
+          CreatedAt: moment(item.createdAt).utc().utcOffset("+07:00").format(),
+          UpdatedAt: moment(item.updatedAt).utc().utcOffset("+07:00").format(),
+          DeletedAt: item.deletedAt === null ? null : moment(item.deletedAt).utc().utcOffset("+07:00").format(),
+        }
+        return result;
+      })
+
+      return res.status(200).json({
+        data: response,
+        message: "Sucessfully Get Data!",
+        status: "success"
       });
     } catch (error) {
       console.error(error.message);
-      res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message, message: 'an error occurred' });
     }
   }
 }

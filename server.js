@@ -3,9 +3,9 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
-const hpp = require('hpp');
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
 
 app = express();
 
@@ -29,18 +29,17 @@ app.use(limiter);
 app.use(cors());
 
 // routes modules
-const authRoute = require('./app/routes/auth_router');
-const userRoute = require('./app/routes/user_router');
-const genreRoute = require('./app/routes/genre_router');
-const movieRoute = require('./app/routes/movie_router');
-const reviewRoute = require('./app/routes/review_router');
+const authRoute = require("./app/routes/auth_router");
+const userRoute = require("./app/routes/user_router");
+const genreRoute = require("./app/routes/genre_router");
+const movieRoute = require("./app/routes/movie_router");
+const reviewRoute = require("./app/routes/review_router");
 
-app.use('/', authRoute);
-app.use('/movie_reviews', userRoute);
-app.use('/movie_reviews', genreRoute);
-app.use('/movie_reviews', movieRoute);
-app.use('/movie_reviews', reviewRoute);
-
+app.use("/", authRoute);
+app.use("/movie_reviews", userRoute);
+app.use("/movie_reviews", genreRoute);
+app.use("/movie_reviews", movieRoute);
+app.use("/movie_reviews", reviewRoute);
 
 // server initial
 const PORT = process.env.PORT || 1337;

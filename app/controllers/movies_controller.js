@@ -49,17 +49,12 @@ class MoviesController {
           model: models.Genre,
           as: 'genres',
           required: false,
-          through: {
-            model: models.MovieGenre,
-            as: 'movieGenres',
-            attributes: [],
-          }
+          through: { attributes: [] },
         }]
       });
       
       const response = data.map(item => {
         const genres = item.genres.map(el => {
-          console.log(el.ID);
           const result = {
             name: el.name,
             ID: el.id,
@@ -81,11 +76,61 @@ class MoviesController {
           DeletedAt: item.deletedAt === null ? null : moment(item.deletedAt).utc().utcOffset("+07:00").format(),
         }
         return result;
-      })
+      });
 
       return res.status(200).json({
         data: response,
         message: "Sucessfully Get Data!",
+        status: "success"
+      });
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).json({ error: error.message, message: 'an error occurred' });
+    }
+  }
+
+  static async addMovieGenre(req, res) {
+    const { moviesID, genreID } = req.body;
+    const schema = Joi.object().keys({
+      moviesID: Joi.string().required(),
+      genreID: Joi.string().required(),
+    });
+
+    try {
+      let payload = { moviesID, genreID };
+      const {_, error} = schema.validate(payload);
+
+      if (error)
+        return res.status(400).json({
+          message: "Field moviesID, genreID is required!",
+          status: "bad request"
+        });
+      
+      const movie = await models.Movie.findByPk(parseInt(moviesID));
+      const genre = await models.Genre.findByPk(parseInt(genreID));
+
+      const data = await models.MovieGenre.create({
+        movieId: moviesID,
+        genreId: genreID
+      }, {
+        returning: true,
+        plain: true,
+      });
+
+      const response = {
+        movie_id: data.movieId,
+        movie: movie.name,
+        genre_id: data.genreId,
+        genre: genre.name,
+        ID: data.id,
+        CreatedAt: moment(data.createdAt).utc().utcOffset("+07:00").format(),
+        UpdatedAt: moment(data.updatedAt).utc().utcOffset("+07:00").format(),
+        DeletedAt: data.deletedAt === null ? null : moment(data.deletedAt).utc().utcOffset("+07:00").format(),
+      }
+      
+      return res.status(200).json({
+        data: response,
+        message: "Sucessfully Added Data!",
         status: "success"
       });
     } catch (error) {

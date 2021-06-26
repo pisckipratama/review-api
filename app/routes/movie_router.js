@@ -10,5 +10,6 @@ router.post(
 );
 
 router.get('/movies', MoviesController.getMovies);
+router.post('/movies/genre', MoviesController.addMovieGenre);
 
 module.exports = router;

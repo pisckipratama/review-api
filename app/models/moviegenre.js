@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     genreId: DataTypes.INTEGER
   }, {
     sequelize,
+    paranoid: true,
     modelName: 'MovieGenre',
   });
   return MovieGenre;

@@ -109,6 +109,12 @@ class MoviesController {
       const movie = await models.Movie.findByPk(parseInt(moviesID));
       const genre = await models.Genre.findByPk(parseInt(genreID));
 
+      if (!movie || !genre)
+      return res.status(400).json({
+        message: "movieID or genreID is not found!",
+        status: "bad request"
+      });
+
       const data = await models.MovieGenre.create({
         movieId: moviesID,
         genreId: genreID
@@ -119,7 +125,7 @@ class MoviesController {
 
       const response = {
         movie_id: data.movieId,
-        movie: movie.name,
+        movie: movie.title,
         genre_id: data.genreId,
         genre: genre.name,
         ID: data.id,

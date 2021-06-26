@@ -31,9 +31,13 @@ app.use(cors());
 // routes modules
 const authRoute = require('./app/routes/auth_router');
 const userRoute = require('./app/routes/user_router');
+const genreRoute = require('./app/routes/genre_router');
+const movieRoute = require('./app/routes/movie_router');
 
 app.use('/', authRoute);
-app.use('/movie_reviews/user', userRoute);
+app.use('/movie_reviews', userRoute);
+app.use('/movie_reviews', genreRoute);
+app.use('/movie_reviews', movieRoute);
 
 
 // server initial

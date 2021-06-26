@@ -8,20 +8,18 @@ module.exports = {
         {
           email: "admin@testing.com",
           password: "$2b$10$mmPI/wY1u.v4YffQJ/YPAeFMJf2RJFGas51vJwVyQ8pv741n9HLKy", // nopassword
-          photo:
-            "https://res.cloudinary.com/dtx75b7pa/image/upload/v1608084525/gjbqhpjujhvrmsmii0vu.png",
+          fullname: "admin",
           createdAt: new Date(),
           updatedAt: new Date(),
-          is_admin: true,
+          role: 'admin',
         },
         {
-          email: "guest@testing.com",
+          email: "user@testing.com",
           password: "$2b$10$mmPI/wY1u.v4YffQJ/YPAeFMJf2RJFGas51vJwVyQ8pv741n9HLKy", // nopassword
-          photo:
-            "https://res.cloudinary.com/dtx75b7pa/image/upload/v1608084525/gjbqhpjujhvrmsmii0vu.png",
+          fullname: "user",
           createdAt: new Date(),
           updatedAt: new Date(),
-          is_admin: false,
+          role: 'user',
         },
       ],
       {}

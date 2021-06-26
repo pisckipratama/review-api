@@ -1,0 +1,142 @@
+{
+    "data": [
+      {
+        "title": "Parasite",
+        "year": 2019,
+        "ratings": 0,
+        "genres": [
+          {
+            "name": "Comedy",
+            "ID": 4,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          },
+          {
+            "name": "Drama",
+            "ID": 5,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          },
+          {
+            "name": "Thriller",
+            "ID": 6,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          }
+        ],
+        "ID": 1,
+        "CreatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "UpdatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "DeletedAt": null
+      },
+      {
+        "title": "The Avengers",
+        "year": 2017,
+        "ratings": 0,
+        "genres": [
+          {
+            "name": "Action",
+            "ID": 1,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          },
+          {
+            "name": "Sci-Fi",
+            "ID": 2,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          },
+          {
+            "name": "Adventure",
+            "ID": 7,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          }
+        ],
+        "ID": 2,
+        "CreatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "UpdatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "DeletedAt": null
+      },
+      {
+        "title": "Spiderman",
+        "year": 2010,
+        "ratings": 0,
+        "genres": [
+          {
+            "name": "Action",
+            "ID": 1,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          },
+          {
+            "name": "Sci-Fi",
+            "ID": 2,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          },
+          {
+            "name": "Adventure",
+            "ID": 7,
+            "CreatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "UpdatedAt": "2021-06-17T20:01:05.237989+07:00",
+            "DeletedAt": null
+          }
+        ],
+        "ID": 3,
+        "CreatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "UpdatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "DeletedAt": null
+      },
+      {
+        "title": "Doraemon Stand By Me 2",
+        "year": 2020,
+        "ratings": 0,
+        "genres": [],
+        "ID": 4,
+        "CreatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "UpdatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "DeletedAt": null
+      },
+      {
+        "title": "Parasyte",
+        "year": 2016,
+        "ratings": 0,
+        "genres": [],
+        "ID": 5,
+        "CreatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "UpdatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "DeletedAt": null
+      },
+      {
+        "title": "Harry Potter",
+        "year": 2014,
+        "ratings": 0,
+        "genres": [],
+        "ID": 6,
+        "CreatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "UpdatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "DeletedAt": null
+      },
+      {
+        "title": "Ayat-Ayat Cinta",
+        "year": 2006,
+        "ratings": 0,
+        "genres": [],
+        "ID": 7,
+        "CreatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "UpdatedAt": "2021-06-17T20:01:05.257593+07:00",
+        "DeletedAt": null
+      }
+    ],
+    "message": "Sucessfully Get Data!",
+    "status": "success"
+  }

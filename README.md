@@ -10,9 +10,9 @@ Backend application with RESTful API for Movie App
 
 `npm install` <br /> <br />
 `npm install sequelize-cli -g` _\*) use sudo if you're Linux user_ <br /> <br />
-`sequelize db:migrate` <br /> <br />
-`sequelize db:seed:all` <br /> <br />
-`cp .env_example .env` _\*) fill your dev environment_ <br /> <br />
+`npm run migrate` <br /> <br />
+`npm run seed` <br /> <br />
+`cp .env_example .env` _\*) fill your dev environment (database, jwt, etc.)_ <br /> <br />
 `npm run dev` <br /> <br />
 
 open http://localhost:3301 and try to access login endpoint with this credential:

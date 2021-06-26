@@ -4,7 +4,9 @@ Backend application with RESTful API for Movie App
 
 #### Publishing
 
-[Postman](https://www.getpostman.com/collections/8e744f30b7bb6f7ced31) <br>
+[Deployed App URL](http://103.31.39.102:3301/) <br>
+[Postman Documenter](https://documenter.getpostman.com/view/5515757/TzedhkB5) <br>
+[Postman Collection](https://www.getpostman.com/collections/1669606050363736c876)
 
 #### How to running at development enviroment
 

@@ -33,11 +33,13 @@ const authRoute = require('./app/routes/auth_router');
 const userRoute = require('./app/routes/user_router');
 const genreRoute = require('./app/routes/genre_router');
 const movieRoute = require('./app/routes/movie_router');
+const reviewRoute = require('./app/routes/review_router');
 
 app.use('/', authRoute);
 app.use('/movie_reviews', userRoute);
 app.use('/movie_reviews', genreRoute);
 app.use('/movie_reviews', movieRoute);
+app.use('/movie_reviews', reviewRoute);
 
 
 // server initial
